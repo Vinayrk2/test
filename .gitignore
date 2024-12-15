@@ -1,19 +1,31 @@
-# Byte-compiled files
+# Python files
+*.pyc
+*.pyo
+*.pyd
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environments
+# Virtual environment
 .venv/
-*.env
 
-# Django-specific files
-*.log
+# Django secret and local settings
+*.sqlite3
 db.sqlite3
-/media/
+
+# Migrations
+*/migrations/
+*/migrations/*.pyc
+*/migrations/*.py[co]
+*/migrations/__pycache__
+
+# Media/uploads
+media/
+
+# Static files 
+static/
 staticfiles/
 
-# VS Code-specific files
+# VScode-specific files
 .vscode/
-*.code-workspace
 
