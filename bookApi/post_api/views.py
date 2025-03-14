@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import BookReview
+from django.http import HttpResponse
 from .middleware import APIKeyAuthentication
 
 class PostReviewView(APIView):
@@ -41,3 +42,6 @@ class PostReviewView(APIView):
     def get(self, request):
         reviews = BookReview.objects.all()
         return Response([{'id': review.id, 'book_title': review.book_title, 'rating': review.rating, 'review': review.review, 'user': review.user.username} for review in reviews], status=status.HTTP_200_OK)
+
+def home(req):
+    return HttpResponse(content="Home")
